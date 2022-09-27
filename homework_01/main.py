@@ -6,12 +6,15 @@
 
 def power_numbers(*num):
     return [num ** 2 for num in num]
+
+
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
     >>> power_numbers(1, 2, 5, 7)
     <<< [1, 4, 25, 49]
     """
+
 
 
 # filter types
