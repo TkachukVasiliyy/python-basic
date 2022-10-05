@@ -25,15 +25,14 @@ PRIME = "prime"
 
 def is_prime(p_int: int) -> bool:
     flag = 0
+    if p_int < 2:
+        return False
     for i in range(2, (p_int // 2) + 1):
         if p_int % i == 0:
             flag = 1
             break
 
-    if flag == 0:
-        return True
-    else:
-        return False
+    return flag == 0
 
 
 def filter_numbers(p_list: list, p_type_item: str) -> list:
