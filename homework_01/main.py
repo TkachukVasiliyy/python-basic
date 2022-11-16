@@ -6,12 +6,15 @@
 
 def power_numbers(*num):
     return [num ** 2 for num in num]
+
+
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
     >>> power_numbers(1, 2, 5, 7)
     <<< [1, 4, 25, 49]
     """
+
 
 
 # filter types
@@ -22,15 +25,14 @@ PRIME = "prime"
 
 def is_prime(p_int: int) -> bool:
     flag = 0
+    if p_int < 2:
+        return False
     for i in range(2, (p_int // 2) + 1):
         if p_int % i == 0:
             flag = 1
             break
 
-    if flag == 0:
-        return True
-    else:
-        return False
+    return flag == 0
 
 
 def filter_numbers(p_list: list, p_type_item: str) -> list:
