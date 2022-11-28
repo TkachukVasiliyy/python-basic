@@ -2,11 +2,11 @@ from fastapi import FastAPI
 from starlette import status
 from fastapi.exception_handlers import http_exception_handler
 from starlette.responses import JSONResponse
-from homework_03.view import router as ping
+# from homework_03.view import router as ping
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 app = FastAPI()
-app.include_router(ping)
+# app.include_router(ping)
 
 
 @app.get("/")
@@ -27,3 +27,17 @@ async def custom_404_handler(request, exception):
         },
         status_code=status.HTTP_404_NOT_FOUND,
     )
+
+
+@app.get("/ping")
+def ping():
+    return {
+        "message": "pong"
+    }
+
+
+@app.post("/ping")
+def create_ping(data: dict):
+    return {
+        "message": data,
+    }
