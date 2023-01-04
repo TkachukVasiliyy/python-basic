@@ -5,14 +5,14 @@ router = APIRouter(prefix="/ping",
                    )
 
 
-@router.get("")
+@router.get("/")
 def ping():
     return {
         "message": "pong"
     }
 
 
-@router.post("")
+@router.post("/")
 def create_ping(data: dict):
     return {
         "message": data,
