@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired, Length
 class ProductForm(FlaskForm):
     name = StringField(
         label="Product name",
-        name="product-name",
+        name="products-name",
         validators=[
             DataRequired(),
             Length(min=3),

@@ -7,3 +7,4 @@ def main_page(request):
         'product': product
     }
     return render(request, 'products/index.html', context=context)
+
